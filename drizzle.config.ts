@@ -9,4 +9,5 @@ export default defineConfig({
   dbCredentials: {
     url: process.env.POSTGRES_URL! + "?sslmode=require",
   },
+  tablesFilter: ["heartcodeTraining_"],
 });
