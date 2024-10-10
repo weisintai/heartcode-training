@@ -4,9 +4,45 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Brain, Heart, Users } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { LinkPreview } from "@/components/ui/link-preview";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Home() {
   const words: string[] = ["Alchohol", "Vape", "Drug"];
+
+  const testimonials = [
+    {
+      quote:
+        "Recovery is not a race. You don't have to feel guilty if it takes you longer than you thought it would.",
+      name: "Anonymous",
+      title: "Person in Recovery",
+    },
+    {
+      quote:
+        "The opposite of addiction is not sobriety. The opposite of addiction is connection.",
+      name: "Johann Hari",
+      title: "Author and Journalist",
+    },
+    {
+      quote:
+        "Addiction is an adaptation. It's not you. It's the cage you live in.",
+      name: "Dr. Gabor Maté",
+      title: "Addiction Expert",
+    },
+    {
+      quote:
+        "Every day is a new opportunity to change your life and be who you want to be.",
+      name: "Anonymous",
+      title: "Recovery Advocate",
+    },
+    {
+      quote:
+        "Your best days are ahead of you. The movie starts when the guy gets sober and puts his life back together; it doesn't end there.",
+      name: "Bucky Sinister",
+      title: "Author and Comedian",
+    },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -24,7 +60,14 @@ export default function Home() {
               future, and well-being.
             </p>
           </div>
+          <BackgroundBeams />
         </section>
+
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
 
         <section
           id="reasons"
@@ -77,35 +120,6 @@ export default function Home() {
         </section>
 
         <section
-          id="get-help"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-black flex flex-col items-center"
-        >
-          <div className="text-center px-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
-              Need Help? You&apos;re Not Alone
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              If you or someone you know is struggling with drug use, help is
-              available. Reach out to professionals who can provide support and
-              guidance.
-            </p>
-            <div className="space-y-4">
-              <Button size="lg" className="w-full max-w-md" asChild>
-                <a
-                  href="https://www.ncada.org.sg/seeking-help/"
-                  target="__blank"
-                >
-                  Find Resources
-                </a>
-              </Button>
-              <p className="text-sm text-gray-500">
-                Confidential and judgment-free support available 24/7
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
           id="resources"
           className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center"
         >
@@ -134,35 +148,61 @@ export default function Home() {
               <CardContent>
                 <ul className="space-y-4 text-center">
                   <li>
-                    <a
-                      href="https://www.cnb.gov.sg"
-                      className="text-blue-500 hover:underline"
-                      target="__blank"
+                    <LinkPreview
+                      url="https://www.cnb.gov.sg"
+                      className="font-bold"
                     >
                       Central Narcotics Bureau (CNB)
-                    </a>
+                    </LinkPreview>
                   </li>
                   <li>
-                    <a
-                      href="https://www.nams.sg"
-                      className="text-blue-500 hover:underline"
-                      target="__blank"
+                    <LinkPreview
+                      url="https://www.nams.sg"
+                      className="font-bold"
                     >
                       National Addictions Management Service (NAMS)
-                    </a>
+                    </LinkPreview>
                   </li>
                   <li>
-                    <a
-                      href="https://www.ncada.org.sg"
-                      className="text-blue-500 hover:underline"
-                      target="__blank"
+                    <LinkPreview
+                      url="https://www.ncada.org.sg"
+                      className="font-bold"
                     >
                       National Council Against Drug Abuse (NCADA)
-                    </a>
+                    </LinkPreview>
                   </li>
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        <section
+          id="get-help"
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-black flex flex-col items-center"
+        >
+          <div className="text-center px-4">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
+              Need Help? You&apos;re Not Alone
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              If you or someone you know is struggling with drug use, help is
+              available. Reach out to professionals who can provide support and
+              guidance.
+            </p>
+            <div className="space-y-4">
+              <Button size="lg" className="w-full max-w-md" asChild>
+                <a
+                  href="https://www.ncada.org.sg/seeking-help/"
+                  target="__blank"
+                >
+                  Find Resources
+                </a>
+              </Button>
+              <p className="text-sm text-gray-500">
+                Confidential and judgment-free support available 24/7
+              </p>
+            </div>
           </div>
         </section>
       </main>

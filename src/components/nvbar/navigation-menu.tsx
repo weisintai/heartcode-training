@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
 
 export default function NavigationBar() {
   return (
-    <NavigationMenu className="sticky top-0 list-none flex justify-between min-w-full h-[60px] bg-muted px-5">
+    <NavigationMenu className="z-[11] sticky top-0 list-none flex justify-between min-w-full h-[60px] bg-muted px-5">
       <div className="flex flex-row justify-start gap-4">
         {navItems.map((navItem, index) => (
           <NavigationItem
