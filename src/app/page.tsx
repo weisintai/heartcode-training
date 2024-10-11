@@ -73,7 +73,7 @@ export default function Home() {
           id="reasons"
           className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-16">
             Why Say No to Drugs
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-4">

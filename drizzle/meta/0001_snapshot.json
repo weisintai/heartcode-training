@@ -1,0 +1,98 @@
+{
+  "id": "5c7249d5-37e4-41d2-9272-b4a15469796f",
+  "prevId": "9d521d08-6bbe-4fd5-b00c-734528129da6",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.heartcodeTraining_drug_prevention_survey": {
+      "name": "heartcodeTraining_drug_prevention_survey",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "education_hours": {
+          "name": "education_hours",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "peer_pressure_confidence": {
+          "name": "peer_pressure_confidence",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "trusted_adults": {
+          "name": "trusted_adults",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "campaign_messages": {
+          "name": "campaign_messages",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "drug_free_activities": {
+          "name": "drug_free_activities",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.heartcodeTraining_user": {
+      "name": "heartcodeTraining_user",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(32)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "isDrugDealer": {
+          "name": "isDrugDealer",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

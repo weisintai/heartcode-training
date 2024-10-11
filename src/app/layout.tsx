@@ -4,6 +4,7 @@ import "./globals.css";
 import NavigationBar from "@/components/nvbar/navigation-menu";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import { ReactQueryClientProvider } from "@/components/query-client-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,16 +32,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavigationBar />
-          <div className="p-5">{children}</div>
-          <Toaster />
-        </ThemeProvider>
+        <ReactQueryClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NavigationBar />
+            <div className="p-5">{children}</div>
+            <Toaster />
+          </ThemeProvider>
+        </ReactQueryClientProvider>
       </body>
     </html>
   );
