@@ -13,7 +13,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { questions } from "@/app/quiz/page";
+import { questions } from "@/lib/constants";
 
 export const description = "A pie chart with a label";
 
